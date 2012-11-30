@@ -1,0 +1,21 @@
+{simple_translate}
+<div style="float: right; margin-right:3px; padding-right:3px;">
+<a style="text-decoration: none;" class="link_buttons" onClick="languageSimpleTranslate();return false;" href="#">
+<img src="{base_url}img/ico_lang.png" width="16" height="16" />
+</a>
+</div>
+{/simple_translate}
+{if_languages}
+<div style="float: right;">
+<form method="post" action="{base_url}user/set_lang" style="margin:0px; padding:0px;">
+<input type="hidden" name="back_url" value="{current_url}" >
+<select name="lang_id" class="language_selector">
+{languages}
+<option {selected} class="language_selector_item" value="{id}" >{name}</option>
+{/languages}
+</select>
+<input {change_language_disable} type="submit" value=""  class="btn_lang" />
+</form>
+</div>
+<div style="float: right; padding-left: 10px; padding-top: 3px; padding-right: 5px;"><{user_header_language}>:</div>
+{/if_languages}

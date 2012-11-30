@@ -1,0 +1,46 @@
+{header}
+{menu}
+ 	<div class="body_center">
+    	<div class="body_header">
+          	<div style="float: left;">
+				<img src="{base_url}img{theme_path}ico_paid_invoice_big.png" width="32" height="32" alt="<{user_paid_invoices_transaction_info_page_title}>">
+			</div>
+          	<div class="header_pad">
+            	<div class="header_subject"><{user_paid_invoices_transaction_info_page_title}></div>
+            	<div class="header_comment"><{user_paid_invoices_transaction_info_page_descr}></div>
+          	</div>
+    	</div>
+    	{error_box}
+		{if_no_error}
+        <table class="settings" align="center">
+        	<tr class="glav">
+            	<td align="right" valign="top"><{user_paid_invoices_transaction_info_label_info}></td>        
+            	<td align="left" valign="top">
+            	{if_info}
+					{info}
+                    	<div>{item}</div>
+            		{/info}
+				{/if_info}
+            	</td>
+        	</tr>
+        	<tr class="glav">
+            	<td align="right"><{user_paid_invoices_transaction_info_label_date}></td>
+      			<td>{if_date}{date}{/if_date}</td>
+      		</tr>
+        	<tr class="glav">
+            	<td align="right"><{user_paid_invoices_transaction_info_label_paysystem}></td>
+      			<td>{pay_system}</td>
+      		</tr>
+        	<tr class="glav">
+            	<td align="right"><{user_paid_invoices_transaction_info_label_amount}></td>
+      			<td>{amount}</td>
+      		</tr>        
+		</table>
+		{/if_no_error}
+        <div class="after_table" style="padding-top: 10px; padding-bottom: 20px;">
+           {button}
+        </div>
+	</div>
+{footer}
+        
+        

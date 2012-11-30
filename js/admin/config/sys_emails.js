@@ -1,0 +1,1 @@
+function myPanelOnLoad(){}function myPanelDestructor(){};

@@ -1,0 +1,210 @@
+{header}
+{menu}
+<div class="body_center" style="width:737px;" >
+<div class="body_header">
+<div style="float: left;"><img src="{base_url}img{theme_path}ico_account_info_big.png" width="32" height="32" alt="<{user_profile_update_img_tip}>"></div>
+<div class="header_pad">
+<div class="header_subject"><{user_profile_billing_update_page_title}></div>
+<div class="header_comment"><{user_profile_billing_update_page_desc}></div>
+</div>
+</div>
+{error_box}
+{message_box}
+<form id="user_form" action="{base_url}user/profile_additional/{page}/{account_id}{red_url}" method="POST" >
+<input type="hidden" name="action" value="save">
+<table class="settings" align="center" style="margin-top: 10px;" >
+{form_fields}
+{if_field_forceuse_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_forceuse}> 
+</td>
+<td>
+</td>
+<td><input {forceuse_checked} type="checkbox" name="forceuse" value="1" /></td>
+</tr>
+{/if_field_forceuse_enabled}
+
+{if_field_name_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_name}> 
+</td>
+<td>
+<span style="color: red;">*</span>
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="name" value="{name}" /></td>
+</tr>
+{/if_field_name_enabled}
+
+{if_field_company_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_company}> 
+</td>
+<td>
+<span style="color: red;">*</span>
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="company" value="{company}" /></td>
+</tr>
+{/if_field_company_enabled}
+
+{if_field_address1_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_address1}> 
+</td>
+<td>
+<span style="color: red;">*</span>
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="address1" value="{address1}" /></td>
+</tr>
+{/if_field_address1_enabled}
+
+{if_field_address2_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_address2}>
+</td>
+<td> 
+{if_field_address2_required}
+<span style="color: red;">*</span>
+{/if_field_address2_required}
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="address2" value="{address2}" /></td>
+</tr>
+{/if_field_address2_enabled}
+
+{if_field_address3_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_address3}>
+</td>
+<td>
+{if_field_address3_required}
+<span style="color: red;">*</span>
+{/if_field_address3_required}
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="address3" value="{address3}" /></td>
+</tr>
+{/if_field_address3_enabled}
+
+{if_field_city_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_city}>
+</td>
+<td>
+<span style="color: red;">*</span>
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="city" value="{city}" /></td>
+</tr>
+{/if_field_city_enabled}
+
+{if_field_zip_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_zip}>
+</td>
+<td>
+<span style="color: red;">*</span>
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="zip" value="{zip}" /></td>
+</tr>
+{/if_field_zip_enabled}
+
+
+{if_field_telno_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_telno}>
+</td>
+<td>
+<span style="color: red;">*</span>
+</td>
+<td><input type="text" style="width: 30px;" maxlength="3" name="telnocc" value="{telnocc}" />&nbsp;&nbsp;&nbsp;<input type="text" style="width: 150px;" maxlength="12" name="telno" value="{telno}" /></td>
+</tr>
+{/if_field_telno_enabled}
+
+{if_field_alttelno_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_alttelno}>
+</td>
+<td>
+{if_field_alttelno_required}
+<span style="color: red;">*</span>
+{/if_field_alttelno_required}
+</td>
+<td><input type="text" style="width: 30px;" maxlength="3" name="alttelnocc" value="{alttelnocc}" />&nbsp;&nbsp;&nbsp;<input type="text" style="width: 150px;" maxlength="12" name="alttelno" value="{alttelno}" /></td>
+</tr>
+{/if_field_alttelno_enabled}
+
+{if_field_faxno_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_faxno}>
+</td>
+<td>
+{if_field_faxno_required}
+<span style="color: red;">*</span>
+{/if_field_faxno_required}
+</td>
+<td><input type="text" style="width: 30px;" maxlength="3" name="faxnocc" value="{faxnocc}" />&nbsp;&nbsp;&nbsp;<input type="text" style="width: 150px;" maxlength="12" name="faxno" value="{faxno}" /></td>
+</tr>
+{/if_field_faxno_enabled}
+
+{if_field_country_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_country}>
+</td>
+<td>
+<span style="color: red;">*</span>
+</td>
+<td>
+<select name="country">
+{countries}
+<option {country_selected} value="{country_code}" >{country_name}</option>
+{/countries}
+</select>
+</td>
+</tr>
+{/if_field_country_enabled}
+
+{if_field_state_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_state}>
+</td>
+<td>
+</td>
+<td>
+<select name="state">
+{states}
+<option {state_selected} value="{state_code}" >{state_name}</option>
+{/states}
+</select>
+</td>
+</tr>
+{/if_field_state_enabled}
+
+{if_field_customerlangpref_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_customerlangpref}>
+</td>
+<td>
+</td>
+<td>
+<select name="customerlangpref">
+{languages}
+<option {language_selected} value="{language_code}" >{language_name}</option>
+{/languages}
+</select>
+</td>
+</tr>
+{/if_field_customerlangpref_enabled}
+{/form_fields}
+{if_field_asdefault}
+<tr class="glav">
+<td align="right"><{user_profile_billing_update_asdefault}> 
+</td>
+<td>
+</td>
+<td><input {asdefault_checked} type="checkbox" name="asdefault" value="1" /></td>
+</tr>
+{/if_field_asdefault}
+</table>
+<div class="after_table" style="padding-top: 10px; padding-bottom: 20px;">
+{if_is_autofill}<input type="submit" name="button_autofill" class="button" title="<{user_profile_billing_update_autofill_title}>" value="<{user_profile_billing_update_button_autofill}>" />&nbsp;&nbsp;&nbsp;{/if_is_autofill}<input type="submit" class="button" name="button_save" value="{save_button_value}" />
+</div>
+</form>
+</div>
+{footer}

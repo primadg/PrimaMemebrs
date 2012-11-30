@@ -1,0 +1,39 @@
+{header}
+{menu}
+<div class="body_center">
+	<div class="body_header">
+	    <div style="float: left;">
+			<img src="{base_url}img{theme_path}ico_paid_invoice_big.png" width="32" height="32" alt="<{user_paid_invoices_page_title}>">
+		</div>
+        <div class="header_pad">
+           	<div class="header_subject"><{user_paid_invoices_page_title}></div>
+           	<div class="header_comment"><{user_paid_invoices_page_descr}></div>
+        </div>
+    {if_total}
+        <br/>
+        <div class="header_comment" style="float: left;"><{user_paid_invoices_label_total}> {total}</div>
+    {/if_total}          
+    </div>
+	{if_items}
+    	{market_table}
+	{/if_items}
+	{else_items}
+		<table class="tab" align="center" width="680" style="padding-bottom: 10px;">
+			<tr class="glav_big">
+              <td><a href="{ord_by_product}" class="sort"><{user_paid_invoices_table_product}></a></td>
+              <td><a href="{ord_by_date}"><{user_paid_invoices_table_date}></a></td>
+              <td><{user_paid_invoices_table_transactions}></td>
+              <td><a href="{ord_by_type}"><{user_paid_invoices_table_subscription_type}></a></td>
+              <td><a href="{ord_by_price}"><{user_paid_invoices_table_price}></a></td>
+            </tr>
+            <tr class="dark">
+				<td colspan="5">
+					<{user_paid_invoices_msg_no_data}>
+				</td>
+			</tr>
+		</table>
+	{/else_items}
+</div>
+
+
+{footer}

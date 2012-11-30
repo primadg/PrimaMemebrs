@@ -1,0 +1,33 @@
+{pager}
+<table align="center" class="tab {table_class}" width="{table_width}" style="margin-bottom:0px;">
+<tr class="glav_big">
+{columns}
+<td width="{column_width}">
+{if_column_sortable}
+<a href="{column_link}" {if_column_sort_style}class="sort"{/if_column_sort_style} >{column_name}</a>
+{if_column_sort}
+{if_sort_asc}&nbsp;&#9650;{/if_sort_asc}
+{if_sort_desc}&nbsp;&#9660;{/if_sort_desc}
+{/if_column_sort}
+{/if_column_sortable}
+{else_column_sortable}{column_name}{/else_column_sortable}
+</td>
+{/columns}
+</tr>
+{rows}
+<tr {if_odd}class="light"{/if_odd}{if_even}class="dark"{/if_even}>
+{cells}
+<td class="{cell_class}">
+{if_cell_link}
+<a class="{cell_link_class}" href="{cell_link}">{cell_text}</a>
+{/if_cell_link}
+{else_cell_link}
+{cell_text}
+{/else_cell_link}
+</td>
+{/cells}
+</tr>
+{/rows}
+</table>
+<br/>
+{pager}

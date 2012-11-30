@@ -1,0 +1,94 @@
+{header}
+{menu}
+<div class="body_center">
+	<div style="padding-left: 20px;">
+    	<h3><{user_info_product_page_title}></h3>
+    </div>
+	{if_product_list}	
+		{product_list}
+		<table align="center" class="block_prod" style="margin-top:15px;">
+          	<tr>
+            	<td style="padding:10px; font-size: 14px; color:#383838; height:30px;">
+					<b> {name} </b>
+				</td>
+            	<td style="padding:10px 10px 0 0; width:250px;" align="right" rowspan="2">
+              		<table class="tab" style="margin-bottom:5px; border:1px #A6DEF0 solid; width:100%;">
+			  			<tr class="light">
+                  			<td><{user_info_product_cost}></td>
+                  			<td width="50%">
+							{if_product_free}
+								{currency}
+								{output_regular_price} &nbsp;
+								{type1}
+							{/if_product_free}
+							{else_product_free}
+								<{user_active_products_node_free}>
+							{/else_product_free}
+                  			</td>
+                		</tr>
+                		<tr class="dark">
+                  			<td><{user_info_product_subscr_start}></td>
+                  			<td width="50%">{subscr_cdate}</td>
+                		</tr>
+                		<tr class="light">
+                  			<td><{user_info_product_subscr_end}></td>
+                  			<td width="50%">{subscr_expire_date}</td>
+                		</tr>
+                		<tr class="dark">
+                  			<td><{user_info_product_period}></td>
+                  			<td width="50%">
+                    			{subscr_regular_period_value}&nbsp;{subscr_regular_period_type}
+                  			</td>
+                		</tr>
+                		<tr class="light">
+                  			<td valign="top"><{user_info_product_links}></td>
+                  			<td class="ots_b">
+                    		{p_dirs}
+								<a href="{http_path}" target='blank'>{name}</a>
+							{/p_dirs}
+                  			</td>
+                		</tr>
+              		</table>
+            	</td>
+          	</tr>
+          	<tr>
+            	<td valign="top" style="padding:10px 10px 0 10px;"> 
+            	{if_image}
+					<img style="float: left; padding: 10px;" src="{image_url}" />
+				{/if_image}
+				{descr}
+            	</td>
+         	</tr>
+        </table>
+		{/product_list}
+	{/if_product_list}
+	{else_product_list}
+    	<table align="center" class="block_prod" style="margin-top:15px; background-color:#ADDFFC;">
+          	<tr>
+            	<td style="padding:10px; font-size: 14px; text-align:center; color:#383838; height:30px;">
+					<{user_active_products_empty}>
+                </td>
+             </tr>
+         </table>   
+	{/else_product_list}
+                 
+	{if_news}
+		<div style="padding-left: 20px;">
+        	<h3><{user_info_label_latest_news}></h3>
+        </div>
+        <table class="tab" align="center" width="700" style="border:1px #A6DEF0 solid; margin-bottom:30px;">
+		{news}
+        	<tr {tr_style_list}>
+            	<td>
+             	 	<div style="float:left; font-weight: bold; ">{name}</div>
+              		<div style="float:right;">{date}</div>
+            	</td>
+        	</tr>
+        	<tr>
+            	<td align="left" style="padding:10px;">{descr}</td>
+        	</tr>
+        {/news}
+    	</table>        
+	{/if_news}
+</div>
+{footer}

@@ -1,0 +1,29 @@
+{header}
+{menu}
+<div class="body_center" style="width:737px;">
+<div class="body_header" style="height:20px;">
+<div style="float: left;">
+<img src="{base_url}img{theme_path}ico_products_big.png" width="32" height="32" alt="">
+</div>
+<div class="header_pad">
+<div class="header_subject"><{user_sale_products_title}></div>
+<div class="header_comment"><{user_sale_products_descr}></div>
+</div>
+</div>
+<div class="filter">
+<form action="{base_url}market/sale/{page}/{per_page}" method="POST" style="text-align: center;">
+<label for="group_id"><{user_sale_products_group_filter}></label>&nbsp;<select name="group_id" id="group_id" style="width: 400px;">
+<option value="0">&nbsp;</option>
+{groups}
+<option {selected} value="{id}">{name}</option>
+{/groups}
+</select>
+<input type="submit" class="button" value="<{user_sale_products_group_button}>" align="middle" />
+</form>
+</div>
+<br/>
+{pager}
+{products}
+{pager}
+</div>
+{footer}

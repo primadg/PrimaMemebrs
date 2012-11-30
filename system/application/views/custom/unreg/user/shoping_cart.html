@@ -1,0 +1,86 @@
+{header}
+{menu}
+<div class="body_center"   style="width:737px;" >
+<div class="body_header">
+<div style="float: left;"><img src="{base_url}img{theme_path}cart.png" border="0" alt="img"></div>
+<div class="header_pad">
+<div class="header_subject"><{user_cart_header}></div>
+<div class="header_comment"><{user_cart_subheader}></div>
+</div>
+</div>
+{error_box}
+{message_box}
+<br/>
+{additional_panel}
+<form method="post" action="{payment_url}" >
+<table class="tab" align="center" cellspacing="0" width="600">
+{if_products}
+<tr>
+<td ><{user_cart_product_name}></td>
+{additional_columns_titles}
+<td >{content}</td>
+{/additional_columns_titles}
+<td ><{user_cart_trial_period}></td>
+<td ><{user_cart_regular_period}></td>
+<td width="30"><{user_cart_price}></td>
+<td width="0"></td>
+</tr>
+{products}
+<tr>
+<td class="left {dotted}">{name}</td>
+{additional_columns_values}
+<td class="{dotted}">{content}</td>
+{/additional_columns_values}
+<td class="left {dotted}">{trial}</td>
+<td class="{dotted}">{regular_period_value} {regular_period_type} {if_old_regular_price}<span style="text-decoration:line-through;">{old_regular_price} {currency_code}</span> {/if_old_regular_price}{regular_price} {currency_code}{if_recouring} - <{user_cart_recouring}>{/if_recouring}</td>
+<td class="{dotted}">{total} {currency_code}</td>
+<td width="0"></td>
+</tr>
+{/products}
+<tr>
+<td style="border-top: 1px solid black;" colspan="{colspan_total}">&nbsp;</td>
+<td align="right" style="padding-right:10px;border-top:1px solid black;"><b><{user_cart_total}></b></td>
+<td style="border-top: 1px solid black;"><b>{total} {currency_code}</b></td>
+<td style="border-top: 1px solid black;" >&nbsp;</td>
+<td width="0"></td>
+</tr>
+{/if_products}
+{else_products}
+<tr >
+<td colspan="{colspan_all}" align="center" style="font-size:120%;" ><{user_cart_empty_product_list}></td>
+<td width="0"></td>
+</tr>
+{/else_products}
+<tr class="not_hover" style="height:20px">
+<td colspan="{colspan_all}" width="100%" align="right">
+<div style="margin:0px;padding:0px;display:inline;">
+{if_payment_systems}
+<{user_cart_choose_payment_system}>
+<select name="payment_system" >
+{payment_systems}
+<option value="{id}">{name}</option>
+{/payment_systems}
+</select>
+{/if_payment_systems}
+{else_payment_systems}
+<input type="hidden" name="payment_system" value="0"/>
+{/else_payment_systems}
+<input type="submit" {payment_disabled} name="next" class="button_big" value="{next_button}" />
+</div>
+</td>
+<td width="0"></td>
+</tr>
+</table>
+</form>
+<table class="tab" align="center" cellspacing="0" width="600">
+<tr class="not_hover" style="height:0px">
+<td width="100%" align="left">
+<form method="post" action="{from_url}" style="position:relative;top:-28px;margin:0px;padding:0px;display:inline;">
+<input type="submit" name="{prev_button_name}" class="button_big" value="{prev_button}" />
+</form>
+</td>
+</tr>
+</table>
+</center>
+</div>
+{footer}

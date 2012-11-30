@@ -1,0 +1,69 @@
+{header}
+{menu}
+<div class="body_center" style="width:737px;">
+<br/>
+{error_box}
+{message_box}
+<br/>
+<form id="login_form" action="{base_url}user/login" method="POST">
+<table align="center">
+{demo_info}
+<tr>
+<td colspan=2 align="center" style="color:blue;">To access demo version please use the following data:</td>
+</tr>
+<tr>
+<td align="right" style="font-weight: bold; font-size: 11px;">Login:<br/>Password:</td>
+<td align="left" style="color: orange; font-weight: bold; font-size: 11px;">user<br/>user</td>
+</tr>
+{/demo_info}
+{show_capcha}
+<tr >
+<td align="right"><{user_login_input_capcha}>:</td>
+<td>
+<input valign="bottom" type="text" name="capcha_code" value="" style="width: 150px; margin-top:10px;" />
+<img src="{base_url}capcha/draw" border="0" style="vertical-align:top;" >
+</td>
+</tr>
+{/show_capcha}     
+<tr>
+<td align="right">{user_login_title}</td>
+<td><input type="text" name="login" style="width: 150px;" value='{user_login}' /></td>
+</tr>
+<tr>
+<td align="right"><{user_login_password}></td>
+<td><input type="password" style="width: 150px;" name="pwd" value='{user_password}' />
+<input type="submit" class="button" value="<{user_login_submit_button}>" /></td>
+</tr>
+{show_remember_field}
+<tr>
+<td align="right"><{user_login_remember_me}></td>
+<td><input type="checkbox" name="remember" value="1" /></td>
+</tr>
+{/show_remember_field}
+<tr>
+<td align="right" >
+<div style="float: left; padding-top: 3px;">
+<a href="{base_url}user/remind_password" ><{user_login_remind_password}></a>
+</div>
+</td>
+<td align="left" >
+<div style="float: left; padding-top: 3px;padding-left:10px;">
+<a href="{base_url}user/register" ><{user_menu_registration}></a>
+</div>
+</td>
+</tr>
+</table>
+<br/><br/><br/>
+<input type="hidden" name="action" value="login" >
+{rand_code}
+<input type="hidden" name="rand_code" value="{content}" >
+{/rand_code}
+{red_url}
+<input type="hidden" name="red_url" value="{content}" >
+{/red_url}
+{show_not_auth}
+<input type="hidden" name="not_auth" value="1" >
+{/show_not_auth}
+</form>
+</div>
+{footer}

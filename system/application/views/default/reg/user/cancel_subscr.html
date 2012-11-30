@@ -1,0 +1,40 @@
+{header}
+{menu}
+	<div class="body_center">
+		<div class="body_header">
+          	<div style="float: left;">
+				<img src="{base_url}img{theme_path}ico_delete_big.png" width="32" height="32" alt="Cancel product" />
+			</div>
+         	<div class="header_pad">
+            	<div class="header_subject"><{user_cancel_subscr_title}></div>
+            	<div class="header_comment"><{user_cancel_subscr_descr}></div>
+          	</div>
+        </div>
+		{message_box}
+		{error_box}
+        {if_form_show}
+        <form method="post" onsubmit="return check_subscr_cancel_check();">
+			<table class="settings" align="center" style="margin-top: 10px; width:700px;" border="0">
+				<tr>
+					<td align="right"width="200"><{user_cancel_subscr_product_name}></td>
+					<td>{name}</td>
+				</tr>          
+				<tr class="glav">
+					<td align="right" valign="top"><{user_cancel_subscr_approve}><span style="color: red;">*</span><small><br><{user_cancel_subscr_approve_label}></small></td>
+					<td>
+						<input type="hidden" name='ch_e' value='<{user_cancel_subscr_approve_phrase}>' />
+						<input type="text" name='ch' />
+					</td>
+				</tr>
+                <tr class="glav">
+					<td align="right" valign="top"></td>
+					<td>
+						<input type="submit" class="button_save_as_template" value="<{user_cancel_subscr_button_cancel}>" />
+					</td>
+				</tr>
+			</table>
+        </form>
+        {/if_form_show}
+	</div>
+{footer}
+    

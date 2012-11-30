@@ -1,0 +1,70 @@
+{if_products}
+{products}
+<table cellpadding="0" cellspacing="0" align="center" class="block_prod" style="margin-top:0px;">
+{if_pending}
+<tr class="dark">
+<td colspan="2" align='center'>
+<div class="header_comment"><{user_active_products_node_in_pending}></div>        
+</td>
+</tr>
+{/if_pending}
+<tr>
+<td style="padding:10px; font-size: 18px; color:#383838;">
+{name}
+</td>
+<td style="padding:10px 10px 0 0; width:310px;" rowspan="2" valign="top">     
+<table class="tab" border="0" style="margin-bottom:5px; border:1px #A6DEF0 solid;width:310px;">
+<tr class="dark">
+<td><{user_active_products_node_subscr_start}></td>
+<td>{cdate}</td>
+</tr>
+{if_subscr_end}
+<tr class="light">
+<td><{user_active_products_node_subscr_end}></td>
+<td>{expire_date}</td>
+</tr>
+<tr class="dark">
+<td><{user_active_products_node_period}></td>
+<td>{regular_period_value}&nbsp;<{user_active_products_node_period_{regular_period_type}}></td>
+</tr>
+{/if_subscr_end}
+<tr class="light">
+<td><{user_active_products_node_links}></td>
+<td>
+{if_dirs}
+{dirs}
+<a href="{http_path}" target='_blank'>{dname}</a><br />
+{/dirs}
+{/if_dirs}
+</td>
+</tr>            
+</table>
+<div class="after_table_prod" style="width:310px;">
+<form method="post" action="{base_url}market/cancel_subscr/{sid}">
+<input type="submit" class="button_save_as_template" value="<{user_active_products_node_button_cancel_subscr}>" />
+</form>
+</div>
+</td>
+</tr>
+<tr>
+<td valign="top" style="padding:10px 10px 0 10px;">  
+{if_image}
+<a target="_blank" href="{image}">
+<img style="float: left; padding: 10px;" src="{preview_image}" />
+</a>
+{/if_image}
+{descr}
+</td>
+</tr>
+</table>
+{/products}
+{/if_products}
+{else_products}
+<table cellpadding="0" cellspacing="0" align="center" class="block_prod" style="margin-top:0px;">
+<tr class="dark" style="background-color:#ADDFFC;">
+	<td colspan="2" align='center'>
+		<h2 style="padding:10px; text-align: center; font-size: 14px; color:#383838;"><{user_active_products_empty}></h2>
+	</td>
+</tr>
+</table>
+{/else_products}

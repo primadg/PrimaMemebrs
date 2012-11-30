@@ -1,0 +1,51 @@
+{if_field}
+<tr class="glav">
+<td align="right" >
+<label for="add_field_{id_type}">
+<span style="display:none;" class="add_field_error_text">
+{validation_errors}
+<span class="{key}">{value}</span>
+{/validation_errors}
+</span>
+{name}:&nbsp;
+{if_required}
+<span style="color: red;">*</span>
+{/if_required}
+{if_description}
+<br/>
+<span><small>{description}</small></span>
+{/if_description}
+</label>
+</td>
+<td>
+{if_type_text}
+<input value="{value}" type="text" class="user_registration_add_field {validation_classes}" name="add_field_{id}" style="width: {field_width}px;" />
+{/if_type_text}
+{if_type_select}
+<select class="user_registration_add_field {validation_classes}" name="add_field_{id}" style="width: {field_width}px;">
+{values}       
+<option {selected} value="{value}">{value}</option>
+{/values}
+</select>
+{/if_type_select}
+{if_type_multiselect}
+<select multiple size="{size}" class="user_registration_add_field {validation_classes}" name="add_field_{id}[]" style="width: {field_width}px;">
+{values}       
+<option {selected} value="{value}">{value}</option>
+{/values}
+</select>
+{/if_type_multiselect}
+{if_type_textarea}
+<textarea class="user_registration_add_field {validation_classes}" name="add_field_{id}" style="width: {field_width}px;" >{value}</textarea>
+{/if_type_textarea}
+{if_type_radio}
+{values}
+<input value="{value}" {checked} type="radio" class="user_registration_add_field {validation_classes}" name="add_field_{id}" /><span>{value}</span><br/>
+{/values}
+{/if_type_radio}
+{if_type_checkbox}
+<input value="{value}" {checked} type="checkbox" class="user_registration_add_field {validation_classes}" name="add_field_{id}" />
+{/if_type_checkbox}
+</td>
+</tr>
+{/if_field}

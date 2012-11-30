@@ -1,0 +1,67 @@
+Prima Membership Installation
+
+The installation process is extremely simple, the Test Utility
+automatically performs the system compatibility check. Besides the
+fields requiring technical details are also automatically filled in,
+though can be changed manually if necessary. To install Prima Membership
+an administrator has to pass through the following steps:
+
+Unzip it either directly to some server folder or locally. If you unzip the
+software locally please load all the unzipped files and folders to
+your server using any FTP manager ONLY IN BINARY MODE. After that
+please enter the full path to the Prima Membership in your browser address
+bar (e.g. http://mydomain.my/pmembership/) and the installation
+process will start.
+
+The process starts with the welcome screen where one can get
+acquainted with the general information about the software and the
+company-developer.
+
+After pushing the next button on the welcome screen page the NS System
+Test Utility performs the automatic compatibility check, if it detects
+any compatibility issues a user is taken to the page where the list of
+errors is displayed and it is impossible to continue installation
+until all the errors are eliminated; in case the software is fully
+compatible with the system a user is taken to the Terms of service
+page where it is necessary to read carefully all the terms and agree
+to them. A user has to check the "I agree" box to be able to continue
+the installation.
+
+By clicking "Next" on the Terms of service page a user proceeds to the
+System settings where it is possible to configure General, Database
+and Date-time settings. The fields "Script URL", "Absolute path" and
+"IP address" in the General Settings are filled in automatically (a
+user is able to change them manually but it is highly recommended not
+to change the automatically detected values, unless an administrator
+is completely sure of what he/she is doing). If the values in the
+Database Settings appear invalid the warning icon with a tooltip is
+displayed beside the settings and it is not possible to continue the
+installation. It is also highly recommended not to change the value in
+the "DB table prefix" field. A user may change System settings later
+when logged in as an administrator in the System configuration
+section.
+
+After clicking "Next" on the System settings page a user is directed
+to the Admin settings page. The Super administrator's account is set
+on this page. It is obligatory to give a valid e-mail address as the
+password for the super admin is generated automatically (for security
+reasons) and sent to the specified e-mail address along with the login
+details. Thus, the e-mail address MUST BE CORRECT to avoid the
+reinstallation of the software. If for any reason it is impossible to
+send an e-mail with the login details, this information is displayed
+on the next page (the last page with the confirmation of the
+successful installation).
+
+After filling in the super admin information a user proceeds to the
+Final page with the confirmation of successful registration.
+
+Please mind that it is very IMPORTANT to configure the server
+time-based scheduling service correctly. It is necessary for
+Prima Membership to close member subscriptions, to inform members of
+different events in time. The correct configuration is also important
+for e-mail sending. Here is the step-by-step example of the server
+time-based scheduling service configuring (we used Cron):
+
+WARNING! PLEASE BE VERY CAREFUL! Do NOT lose super admin's login or
+password, they cannot be recovered as we do NOT leave backdoors for
+security reasons.

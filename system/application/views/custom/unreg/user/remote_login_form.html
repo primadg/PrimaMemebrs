@@ -1,0 +1,30 @@
+<form name='ns_login_form' method='post' action='{base_url}user/login' id='login_form'>
+<table align='center'>
+<tr>
+<td colspan='2'><div style="color:red;text-align:center;" id='ns_error_div'></div></td>
+</tr>
+<tr id='ns_capcha_row' style='display:none;'>
+<td align="right"><{user_login_input_capcha}>:</td>
+<td>
+<input valign="bottom" type="text" name="capcha_code" value="" style="width: 150px; margin-top:10px;" />
+<img src="{base_url}capcha/draw" border="0" style="vertical-align:top;" >
+</td>
+</tr>
+<tr>
+<td align='right'>{login_label}</td>
+<td><input  type='text' style='width: 150px;' name='login' class=''/></td>
+</tr>
+<tr>
+<td align='right'><{user_login_password}></td><td><input type='password' name='pwd' style='width: 150px;'/></td>
+</tr>
+<tr>
+<td align='right'><span id='ns_remember_title' style='display:none;'><{user_login_remember_me}></span></td><td><input id='ns_remember_input' style='display:none;float:left;' type='checkbox' value='1' name='remember'/><input type='submit' value='Login' class='button' style="float:right;" /><div style='clear:both;'></div></td>
+</tr>
+<tr>
+<td align='right'><div style='float: left; padding-top: 3px;'><a href='{base_url}user/remind_password'><{user_login_remind_password}></a></div></td><td align'left'><div style='float: left; padding-top: 3px; padding-left: 10px;'><a href='{base_url}user/register'><{user_menu_registration}></a></div></td>
+</tr>
+</table>
+<br/>
+<input type='hidden' value='login' name='action'/>
+<input type='hidden' name='red_url' value='' >
+</form>

@@ -1,0 +1,69 @@
+{header}
+{menu}
+<div class="body_center" style="width:737px;" >
+<div class="body_header">
+<div style="float: left;"><img src="{base_url}img{theme_path}ico_account_info_big.png" width="32" height="32" alt="<{user_profile_update_img_tip}>"></div>
+<div class="header_pad">
+<div class="header_subject"><{user_profile_update_page_title}></div>
+<div class="header_comment"><{user_profile_update_page_desc}></div>
+</div>
+</div>
+{error_box}
+{message_box}
+<form id="user_form" action="{base_url}user/profile" method="POST" >
+<input type="hidden" name="action" value="save">
+<table class="settings" align="center" style="margin-top: 10px;" >
+{form_fields}
+{if_field_login_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_update_label_login}> </td>
+<td>{login}</td>
+</tr>
+{/if_field_login_enabled}
+{if_field_email_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_update_label_email}> 
+<span style="color: red;">*</span>
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="email" value="{email}" /></td>
+</tr>
+{if_field_email_retype}
+<tr class="glav">
+<td align="right"><{user_profile_update_label_email_retype}> 
+<span style="color: red;">*</span>
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="email_retype" value="{email_retype}" /></td>
+</tr>
+{/if_field_email_retype}
+{/if_field_email_enabled}
+{if_field_fname_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_update_label_first_name}> 
+{if_field_fname_required}
+<span style="color: red;">*</span>
+{/if_field_fname_required}
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="fname" value="{fname}" /></td>
+</tr>
+{/if_field_fname_enabled}
+{if_field_lname_enabled}
+<tr class="glav">
+<td align="right"><{user_profile_update_label_last_name}> 
+{if_field_lname_required}
+<span style="color: red;">*</span>
+{/if_field_lname_required}
+</td>
+<td><input type="text" style="width: 300px;" maxlength="{field_maxlength}" name="lname" value="{lname}" /></td>
+</tr>
+{/if_field_lname_enabled}
+{if_field_additional_enabled}
+{add_fields}
+{/if_field_additional_enabled}
+{/form_fields}
+</table>
+<div class="after_table" style="padding-top: 10px; padding-bottom: 20px;">
+<input type="submit" class="button" value="<{user_profile_update_button_save}>" />&nbsp;
+</div>
+</form>
+</div>
+{footer}

@@ -1,0 +1,1 @@
+function load_member_statistics(){var b=$("#year").val();var a=$("#month").val();reloadChart(a,b);return}function reloadChart(d,b){var a="chart";if(navigator.appName.indexOf("Microsoft")!=-1){var c=window["ie_"+a];c.Movie="swf/open-flash-chart.swf?data="+base_url+"member/load_statistics/"+d+"/"+b}else{var c=document[a];c.reload(base_url+"member/load_statistics/"+d+"/"+b)}};

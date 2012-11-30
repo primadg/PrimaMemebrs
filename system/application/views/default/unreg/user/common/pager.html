@@ -1,0 +1,37 @@
+<div class="page">
+    <form action="{url}1/0{sort_link}" method="post">
+    <div style="float: left; padding-top: 6px; padding-right: 5px;"><{perpage_name}>:</div>
+    <div style="float: left; padding: 0px;">
+    <select id="pp_select" name="per_page" style="width: 50px;">
+    {perpage_list}
+    <option value="{value}" {selected}>{value}</option>
+    {/perpage_list}
+    </select></div>
+    <div style="float: left; padding-top: 2px; padding-left: 5px;">
+    <input type="submit" class="button_go" value="<{perpage_btn}>" />
+    </div>
+    </form>
+    {page_selector}
+    {next_pages}
+    <div>
+    <a href="{url}{next_page}/{current_per_page}{sort_link}" >&gt;</a>
+    <a href="{url}{pages}/{current_per_page}{sort_link}" >&gt;&gt;</a>
+    </div>
+    {/next_pages}    
+    <div style="padding-top: 5px;">
+    <select id="cp_select" style="width: 50px;" onChange="document.location.href = '{url}' + this.value + '/{current_per_page}{sort_link}'; return false;" >
+    {page_range}
+    <option value="{value}" {selected}>{value}</option>
+    {/page_range}
+    </select>
+    </div>    
+    {prev_pages}
+    <div>
+    <a href="{url}1/{current_per_page}{sort_link}" >&lt;&lt;</a>
+    <a href="{url}{prev_page}/{current_per_page}{sort_link}" >&lt;</a>
+    </div>
+    {/prev_pages}    
+    <div style="padding-right: 3px;"><{pager_name}>:</div>
+    {/page_selector}    
+</div>    
+    

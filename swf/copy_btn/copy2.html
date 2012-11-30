@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>copy_btn</title>
+<style>
+.light{
+  background-color: #CCCCCC;
+}
+
+.dark{
+  background-color: #006600;
+}
+</style>
+
+<script type="text/javascript">
+function getDataBack(name_id) {
+    var e = document.getElementById("sendtext_"+name_id);
+    return e.value;
+}
+</script>
+</head>
+<body bgcolor="#ffffff">
+<form>
+<input id="sendtext_1" style="width:400px; border:1px solid #000;" value="test test"><br />
+<input id="sendtext_2" style="width:400px; border:1px solid #000;" value="test test">
+</form>
+
+<div class="light">
+<object type="application/x-shockwave-flash" name="flash1" id="flash1" data="copy_btn.swf" width="16" height="16">
+<param name="movie"     value="copy_btn.swf" />
+<param name="quality"   value="high" />
+<param name="menu"      value="false" />
+<param name="FlashVars" value="debug=true&c_param=getDataBack&c_id=1&btn_h=16&btn_w=16&btn_bg=cccccc&btn_img=ico_accept.png">
+</object>
+</div>
+
+<div class="light">
+<object type="application/x-shockwave-flash" name="flash11" id="flash11" data="copy_btn.swf" width="16" height="16">
+<param name="movie"     value="copy_btn.swf" />
+<param name="quality"   value="high" />
+<param name="menu"      value="false" />
+<param name="FlashVars" value="c_param=getDataBack&c_id=1&btn_img=ico_accept.png">
+</object>
+</div>
+
+<div class="dark">
+<object type="application/x-shockwave-flash" name="flash2" id="flash2" data="copy_btn.swf" width="16" height="16">
+<param name="movie" value="copy_btn.swf" />
+<param name="quality" value="high" />
+<param name="menu" value="false" />
+<param name="wmode" value="opaque">
+<param name="FlashVars" value="c_param=getDataBack&debug=true&c_id=2&btn_img=ico_accept.png">
+</object>
+</div>
+
+<object type="application/x-shockwave-flash" name="flash3" id="flash3" data="copy_btn.swf" width="16" height="16">
+<param name="movie"   value="copy_btn.swf" />
+<param name="quality" value="high" />
+<param name="menu"    value="false" />
+<param name="wmode"   value="transparent">
+<param name="FlashVars" value="c_param=getDataBack&btn_img=ico_accept.png">
+</object>
+
+<object type="application/x-shockwave-flash" name="flash4" id="flash4" data="copy_btn.swf" width="258" height="64">
+<param name="movie"   value="copy_btn.swf" />
+<param name="quality" value="high" />
+<param name="menu"    value="false" />
+<param name="FlashVars" value="debug=true&c_param=getDataBack2&c_id=2&btn_h=64&btn_w=258&btn_bg=FF0000&btn_img=logo.png">
+</object>
+
+<object type="application/x-shockwave-flash" name="flash5" id="flash5" data="copy_btn.swf" width="16" height="16">
+<param name="movie"   value="copy_btn.swf" />
+<param name="quality" value="high" />
+<param name="menu"    value="false" />
+<param name="FlashVars" value="c_param=getDataBack2&c_id=2&btn_img=ico_warn2.png">
+</object>
+
+</body>
+</html>

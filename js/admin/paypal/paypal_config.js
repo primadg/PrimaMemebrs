@@ -1,0 +1,1 @@
+var validator;function myPanelOnLoad(){try{validator=new FormValidator();validator.add("business","check_mail(val)&&val");validator.items.business.checkOnEvent("keyup");validator.add("sandbox");validator.checkAll()}catch(a){alert("myTabOnLoad: "+a.message);_sys_error("Error:","FAIL",a)}}function myPanelDestructor(){validator=null};

@@ -1,0 +1,84 @@
+{header}
+{menu}
+<div class="body_center" style="width:737px;" >
+	<div class="body_header">
+    	<div style="float: left;">
+			<img src="{base_url}img{theme_path}ico_account_info_big.png" width="32" height="32"alt="Registration">
+		</div>
+        <div class="header_pad">
+            <div class="header_subject"><{user_payment_form_header}></div>
+            <div class="header_comment"><{user_payment_form_subheader}></div>
+        </div>
+	</div>
+    {error_message}
+    <form method="post" action="{action}" style="margin:0px;padding:0px;display:inline;" >
+    	<table class="settings" align="center" style="margin-top: 10px;" >
+        {payment_add_fields}
+          	<tr class="glav">
+            	<td align="right"><{user_profile_billing_update_name}> <span style="color: red;">*</span></td>
+            	<td><input name="billing_name" value="{billing_name}" type="text" style="width: 350px;" /></td>
+          	</tr>
+        {if_need_billing_info}
+        	<tr class="glav">
+            	<td align="right"><{user_profile_billing_update_country}> <span style="color: red;">*</span></td>
+            	<td>
+	                <select name="country" style="width: 300px;">
+    	            <option label="[Select Country]" value="">[Select Country]</option>
+        	        <option label="United States" value="US">United States</option>
+					{countries}
+						<option {if_post_country} selected="true" {/if_post_country} label="{name}" value="{code}">
+							{name}
+						</option>
+					{/countries}
+            	    </select>
+            	</td>
+          	</tr>
+          	<tr class="glav">
+            	<td align="right"><{user_profile_billing_update_state}> <span style="color: red;">*</span></td>
+            	<td>
+              		<select name="state" style="width: 200px;">
+                	<option label="[Select State]" value="" >[Select State]</option>
+               		{states}
+						<option {if_post_state} selected="true" {/if_post_state} label="{name}" value="{code}">
+							{name}
+						</option>
+					{/states}
+        	      </select>
+            	</td>
+          	</tr>
+          	<tr class="glav">
+            	<td align="right"><{user_profile_billing_update_city}> <span style="color: red;">*</span></td>
+            	<td>
+					<input type="text" name="city" value="{if_post_city}{post_city}{/if_post_city}{else_post_city}{post_city}{/else_post_city}" style="width: 350px;" />
+				</td>
+          	</tr>
+          	<tr class="glav">
+            	<td align="right"><{user_profile_billing_update_zip}> <span style="color: red;">*</span></td>
+            	<td>
+					<input type="text" name="zip" value="{if_post_zip}{post_zip}{/if_post_zip}{else_post_zip}{post_zip}{/else_post_zip}" style="width: 100px;"/>
+				</td>
+          	</tr>
+          	<tr class="glav">
+            	<td align="right"><{user_profile_billing_update_address1}> <span style="color: red;">*</span></td>
+            	<td>
+				<input type="text" name="street" value="{if_post_street}{post_street}{/if_post_street}{else_post_street}{post_street}{/else_post_street}" style="width: 350px;" />
+				</td>
+          	</tr>
+          	<tr class="glav">
+            	<td align="right"><{user_profile_billing_update_telno}> <span style="color: red;">*</span></td>
+            	<td>
+				<input type="text" name="phone" value="{if_post_phone}{post_phone}{/if_post_phone}{else_post_phone}{post_phone}{/else_post_phone}" style="width: 100px;"/>
+				</td>
+          	</tr>
+		{/if_need_billing_info}
+        </table>
+        <input type="hidden" name="submit_action" value="order" >
+        <div class="after_table" style="padding-top: 10px; padding-bottom: 30px;">
+          	<input type="submit" class="button" value="Order"  />&nbsp;
+  	</form>
+        	<form method="post" action="{url_cart}" style="margin:0px;padding:0px;display:inline;">
+        		<input type="submit" class="button_big" value="<{user_payment_form_btn_cancel}>" />
+        	</form>
+        </div>
+</div>
+{footer}

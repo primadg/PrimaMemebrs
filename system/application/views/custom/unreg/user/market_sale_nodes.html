@@ -1,0 +1,101 @@
+{if_products}
+{products}
+<form action="{base_url}cart" method="post">
+<input type="hidden" name="product_id" value="{product_id}" />
+<input type="hidden" name="from" value="{cur_url}" />
+<table cellpadding="0" cellspacing="0" align="center" class="block_prod" style="margin-top:0px;">
+<tr>
+<td style="padding:10px; font-size: 18px; color:#383838;">
+{product_name}
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" style="padding:10px 10px 0 10px; width: 360px">
+{if_image}
+<a target="blank" href="{image}">
+<img style="float: left; padding: 10px;" src="{preview_image}" />
+</a>
+{/if_image}                
+{product_descr}
+</td>
+<td style="padding: 1px 1px 0pt 0pt;" rowspan="2" valign="top">
+<table class="tab" border="0" style="margin-bottom: 5px; border: 1px #A6DEF0 solid; width: 310px;">
+<tr class="light">
+<td width="100" style="text-align: right;"><{user_sale_products_nodes_group}></td>
+<td colspan="2">
+{group_name}
+</td>
+</tr>
+<tr class="light">
+<td style="text-align: right;"><{user_sale_products_nodes_subscr_type}></td>
+<td colspan="2">
+{if_is_recouring}
+<select style="width: 120px;" name="type">
+<option value="1"><{user_sale_products_nodes_subscr_type_one_time}></option>
+<option value="2"><{user_sale_products_nodes_subscr_type_recurring}></option>
+</select>
+{/if_is_recouring}
+{else_is_recouring}
+<{user_sale_products_nodes_subscr_type_one_time}>
+<input type='hidden' name="type" value="1" />
+{/else_is_recouring}
+</td>
+</tr>
+{if_trial_period}
+<tr class="dark">
+<td style="text-align: right;">
+<{user_sale_products_nodes_trial_duration}>
+</td>
+<td colspan="2">
+{trial_period_value}
+&nbsp;
+<{user_sale_products_nodes_trial_period_type_{trial_period_type}}>
+&nbsp;
+{currency}&nbsp;{trial_price}
+&nbsp;
+<input type="checkbox" name="user_force_trial" value='1'/>
+</td>
+</tr>
+{/if_trial_period}
+{if_not_free}
+<tr class="dark" style="background-color: #f4b371;">
+<td colspan="3"><{user_sale_products_nodes_price}>&nbsp;({currency})</td>
+</tr>
+{prices}
+<tr class="dark">
+<td style="text-align: right;"><{user_sale_products_nodes_price_{period}}></td>
+<td>
+{price}
+</td>
+<td style="text-align: center;"><input type="radio" checked='true' name="period" value="{period}" /></td>
+</tr>
+{/prices}
+{/if_not_free}
+</table>
+<div class="after_table_prod">
+<input type="submit" {submit_disabled} class="button" value="<{user_sale_products_order_button}>" />
+</div>
+</td>
+</tr>
+{if_discount}
+<tr>
+<td height="56"style="padding:0px;" valign="bottom">
+<div class="discount" style="display:block;">&nbsp;</div>
+</td>
+</tr>
+{/if_discount}
+{if_free}
+<tr>
+<td height="56"style="padding:0px;" valign="bottom">
+<div class="free" style="display:block;">&nbsp;</div>
+</td>
+</tr>
+{/if_free}
+</table>
+</form>
+{/products}
+{/if_products}
+{else_products}
+<h2 style="padding:10px; font-size: 18px; color:#383838;"><{user_sale_products_nodes_no_available}></h2>
+{/else_products}

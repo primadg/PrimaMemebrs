@@ -1,0 +1,1 @@
+function myPanelOnLoad(){}function myPanelDestructor(){}function ShowTransactionDetails(b){myPanelDestructor();var a={action:""};document.location.hash=document.location.hash.split("/").slice(0,-2).join("/");load_panel(base_url+"statistic/transactions_stats/"+b+"/",a,{"0":base_url+"js/admin/init.js"})};

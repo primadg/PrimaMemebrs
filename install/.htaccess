@@ -1,0 +1,20 @@
+Order deny,allow
+allow from all
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule .* - [E=MOD_REWRITE_ENABLED:mod_rewrite]
+<IfModule mod_env.c>
+RewriteRule .* - [E=MOD_ENV_ENABLED:|mod_env]
+</IfModule>
+<IfModule mod_auth_basic.c>
+RewriteRule .* - [E=MOD_AUTH_BASIC_ENABLED:|mod_auth_basic]
+</IfModule>
+<IfModule mod_auth.c>
+RewriteRule .* - [E=MOD_AUTH_ENABLED:|mod_auth]
+</IfModule>
+<IfModule mod_proxy.c>
+RewriteRule .* - [E=MOD_PROXY_ENABLED:|mod_proxy]
+</IfModule>
+RewriteRule ^index\.php$ index.php?modules=%{ENV:MOD_REWRITE_ENABLED}%{ENV:MOD_ENV_ENABLED}%{ENV:MOD_AUTH_BASIC_ENABLED}%{ENV:MOD_AUTH_ENABLED}%{ENV:MOD_PROXY_ENABLED} [QSA,L]
+</IfModule>

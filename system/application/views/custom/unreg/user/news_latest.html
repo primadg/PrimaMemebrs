@@ -1,0 +1,54 @@
+{header}
+{menu}
+<div class="body_center" style="width:737px;">
+<div class="body_header">
+<div style="float: left;"><img
+src="{base_url}img{theme_path}ico_new_big.png"
+width="32" height="32" alt="<{user_news_latest_label}>"></div>
+<div class="header_pad">
+<div class="header_subject"><{user_news_latest_label}></div>
+<div class="header_comment"><{user_news_latest_label_desc}></div>
+</div>
+</div>
+{if_news_list}
+<table class="tab" align="center" width="700" style="margin-bottom:0px;">
+{items}
+<tr 
+{if_item_0}class="latest_news_0"{/if_item_0}
+{if_item_1}class="latest_news_1"{/if_item_1}
+{if_item_2}class="latest_news_2"{/if_item_2}
+{if_item_3}class="latest_news_3"{/if_item_3}
+{if_item_4}class="latest_news_4"{/if_item_4}
+>
+<td style="padding:10px;">
+<div style="float:left; font-weight: bold; ">
+{name}
+</div>
+<div style="float:right;">
+{date}
+</div>
+</td>
+</tr>
+<tr>
+<td align="left" style="padding:10px;">
+{descr}
+<a href="{base_url}news/show/{id}" >&nbsp;more...</a>
+</td>
+</tr>
+{/items}  
+</table>
+<div style="margin-bottom:30px; width:710px;" align="right">
+{submit_button}
+</div>
+{/if_news_list}
+{else_news_list}
+<table class="tab" align="center" width="700" style="margin-bottom:0px;">
+<tr class="dark">
+	<td>
+		<h2 style="padding:10px; font-size: 14px; color:#383838;"><{user_news_no_available}></h2>
+	</td>
+</tr>
+</table>
+{/else_news_list}
+</div>
+{footer}

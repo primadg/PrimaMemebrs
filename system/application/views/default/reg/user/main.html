@@ -1,0 +1,157 @@
+{header}
+{menu}
+<div class="body_center">
+<table>
+<tr>
+<td style=" width:530px; vertical-align: top;">
+	<div style="padding-left: 20px;">
+    	<h3><{user_config_mainpage_header_subject}></h3>
+    </div>
+   	{if_products}
+    <table>
+		{items}            
+        <tr>
+        <td>   
+          	<form action="{base_url}cart" method="post">
+                <input type="hidden" name="product_id" value="{product_id}" />
+                <input type="hidden" name="from" value="{cur_url}" />
+                <table cellpadding="0" cellspacing="0" align="left" class="block_prod" style="width:535px;">
+                   	<tr>     
+                   		<td style="padding:10px; font-size: 18px; color:#383838;">
+                        {product_name}
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td valign="top" style="padding:10px 10px 0 10px; width: 220px">
+                            {if_image}
+                                <a target="blank" href="{image}">
+                                	<img style="float: left; padding: 10px;" src="{preview_image}" />
+                                </a>
+                            {/if_image}        
+                                    
+                            {product_descr}
+                        </td>
+                        <td style="padding: 1px 1px 0pt 0pt;" rowspan="2" valign="top">
+                        <table class="tab" border="0" style="margin-bottom: 5px; border: 1px #A6DEF0 solid; width: 280px;">
+                            <tr class="light">
+                                <td width="100" style="text-align: right;"><{user_config_mainpage_product_group}></td>
+                                <td colspan="2">
+                                	{group_name}
+                                </td>
+                            </tr>
+                            <tr class="light">
+                                <td style="text-align: right;"><{user_config_mainpage_product_subscr_type}></td>
+                                <td colspan="2">
+                                    {if_is_recouring}
+                                        <select style="width: 120px;" name="type">
+                                        <option value="1"><{user_config_mainpage_product_subscr_type_one_time}></option>
+                                        <option value="2"><{user_config_mainpage_product_subscr_type_recurring}></option>
+                                        </select>
+                                    {/if_is_recouring}
+                                    {else_is_recouring}
+                                        <{user_config_mainpage_product_subscr_type_one_time}>
+                                        <input type='hidden' name="type" value="1" />
+                                    {/else_is_recouring}
+                                </td>
+                            </tr>
+                    		{if_trial_period}
+                            <tr class="dark">
+                                <td style="text-align: right;">
+                                	<{user_config_mainpage_product_trial_duration}>
+                                </td>
+                                <td colspan="2">
+                                    {trial_period_value}
+                                    &nbsp;
+                                    <{user_config_mainpage_product_trial_period_type_{trial_period_type}}>
+                                    &nbsp;
+                                    {currency}&nbsp;{trial_price}
+                                    &nbsp;
+                                    <input type="checkbox" name="user_force_trial" value='1'/>
+                                </td>
+                            </tr>
+                            {/if_trial_period}
+                            {if_not_free}
+                            <tr class="dark" style="background-color: #f4b371;">
+                            	<td colspan="3"><{user_sale_products_nodes_price}>&nbsp;({currency})</td>
+                            </tr>
+                            {prices}
+                            <tr class="dark">
+                                <td style="text-align: right;"><{user_config_mainpage_product_price_{period}}></td>
+                                <td>
+                                {price}
+                                </td>
+                                <td style="text-align: center;"><input type="radio" checked='true' name="period" value="{period}" /></td>
+                            </tr>
+                            {/prices}
+                            {/if_not_free}
+                    	</table>
+                        <div class="after_table_prod" style="width:280px;">
+                        <input type="submit" {submit_disabled} class="button" value="<{user_config_mainpage_product_order_button}>" />
+                        </div>
+                        </td>
+                    </tr>
+                    {if_discount}
+                    <tr>
+                        <td height="56"style="padding:0px;" valign="bottom">
+                        <div class="discount" style="display:block;">&nbsp;</div>
+                        </td>
+                    </tr>
+                    {/if_discount}
+                    {if_free}
+                    <tr>
+                        <td height="56"style="padding:0px;" valign="bottom">
+                        <div class="free" style="display:block;">&nbsp;</div>
+                        </td>
+                    </tr>
+                    {/if_free}
+                    </table>
+			</form>	
+        </td>
+        </tr>
+    	{/items}
+	</table>
+	{/if_products}
+             	
+       		
+	
+	{else_products}
+		<h2 style="padding:10px; font-size: 18px; color:#383838;"><{user_config_mainpage_product_no_available}></h2>
+	{/else_products}
+</td>
+<td style=" width:200px; vertical-align:top;">           
+	{if_news}
+		<div style="padding-left: 20px; text-align:left; margin-left:10px;">
+        	<h3><{user_config_mainpage_label_latest_news}></h3>
+        </div>
+        <table>
+        {news}
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" align="left" class="block_prod" style=" width:180px;">
+                    <tr {tr_style_list}>
+                        <td align="left" style="padding:5px;">
+                            <div style="float:left; font-weight: bold; ">{name}</div>
+                            <div style="float:right;">{date}</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="padding:15px;">
+                            {descr}
+                            <a href="{base_url}news/show/{id}" >&nbsp;more...</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        {/news}
+        
+        </table>        
+	{/if_news}
+</td>
+</tr>
+</table>
+{admin_msg}
+<br />
+</div>
+{footer}

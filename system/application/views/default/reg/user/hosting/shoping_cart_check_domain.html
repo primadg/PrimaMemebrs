@@ -1,0 +1,15 @@
+<table align="center" cellspacing="0" width="600"><tr><td>
+<fieldset><legend class="handpointer" onclick="filterResize(this)"><{user_cart_additional_panel}><span id="toggle_arrow">&nbsp;&#9660;</span></legend>
+<table class="filter">
+<tr class="not_hover">
+<td><{user_cart_hosted_check_domain}></td>
+<td>
+<form method="post" action="{base_url}cart" style="margin:0px;padding:0px;display:inline;">
+    <input type="text" id='domain_field' name='domain' style="width:180px;padding:0px;" maxlength="255" value='{checked_domain}' />
+    <input type="submit" name="domain_check_button" onclick="return user_check_domain();" value="<{user_cart_hosted_btn_check_domain}>" title="<{user_cart_hosted_btn_check_domain}>" class="button_big">
+</form>
+</td>
+</tr>
+</table>
+</fieldset>
+</td></tr></table>
